@@ -1,0 +1,49 @@
+You are given the following playtennis table (S), that decides if a person wants to playtennis (target class) or not based on the features (outlook, temperature, humidity, wind)
+ 
+
+     outlook   temperature   humidity   wind   playtennis
+
+0     sunny     hot          high       weak   no
+
+1     sunny     hot          high      strong  no
+
+2   overcast    hot          high       weak   yes
+
+3    rain       mild         high       weak   yes
+
+4     rain      cool        normal       weak  yes
+
+5     rain      cool        normal      strong  no
+
+6  overcast     cool        normal      strong  yes
+
+7    sunny      mild         high       weak     no
+
+8    sunny      cool        normal      weak     yes
+
+9    rain       mild        normal      weak     yes
+
+10   sunny      mild        normal     strong     no
+
+11   overcast    mild        high      strong   yes
+
+12   overcast    hot        normal     weak      yes
+
+13     rain     mild          high     strong     no
+
+14     sunny     mild         high      strong    no
+
+Write a python code to build a decision stump which would be a decision tree of depth=1. The Decision Stump would be a class that would provide two primary functions: fit, and predict. The class should be able to handle discrete data that can be either numeric (eg, 0,1,2) or a string of characters (eg. Yes/No) . You can assume that all the features and the target are discrete valued attributes as shown in the “PlayTennis” dataset provided above. The single node in the tree must be chosen using information gain and entropy.  
+
+The fit method takes in two arguments: X is 2 dimensional numpy array, which is the training instances and Y which is the class labels corresponding to the training instances X.  Y will be a one dimensional numpy array. The fit method must take in the training data (X, Y) and build a decision stump.
+
+The predict method takes in a set of instances X_predict which has the same dimensions as the training instances X and will also be a 2-dimensional numpy array. The predict method must output a one dimensional array of the target classes predicted by the decision stump, corresponding to each of the X_predict instances.
+
+You can test your code with the same “playtennis” dataset provided above to see if it computes the correct information gain for each of the features of the “playtennis” data. Please make sure your code also handles boundary test conditions such as an empty training dataset.
+
+Please name your class as “DecisionStump” and the two methods as “fit” and “predict”.
+
+Compute the InformationGain(S, outlook), InformationGain(S, temperature), InformationGain(S,  humidity), InformationGain(S, wind) to verify if your program output is correct.
+
+
+Note: The decision stump can be used to select a single important feature that helps predict the target class, given a large set of features.
